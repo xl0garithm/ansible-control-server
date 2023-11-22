@@ -5,3 +5,6 @@
       ansible.builtin.apt:
         name: "*"
         state: latest
+    - name: Upgrade packages
+      ansible.builtin.apt:
+        upgrade: yes
