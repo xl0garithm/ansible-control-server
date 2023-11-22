@@ -1,0 +1,8 @@
+- name: Playbook
+  hosts: containers
+  tasks:
+    - name: Sent discord message
+      community.general.discord:
+        webhook_id: "{{ discord_webhook_id }}"
+        webhook_token: "{{ discord_webhook_token }}"
+        content: "{{ inventory_hostname }}"

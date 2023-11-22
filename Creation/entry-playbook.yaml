@@ -1,0 +1,2 @@
+#First thing executed upon creation of new VM or container
+#Updates all packages and installs all required packages
