@@ -1,2 +1,13 @@
 #First thing executed upon creation of new VM or container
 #Updates all packages and installs all required packages
+- import_playbook: ../Configuration/update-playbook.yaml
+
+- name: Playbook
+  hosts: teamspeak
+  tasks:
+    - name: Install list of packages
+      ansible.builtin.apt:
+        pkg: "{{ packages }}"
+    - name: Install Tailscale
+      ansible.builtin.command:
+        cmd: "{{ tailscale_command }}"

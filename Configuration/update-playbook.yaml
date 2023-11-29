@@ -2,9 +2,6 @@
   hosts: containers
   tasks:
     - name: Update all packages to their latest version
-      ansible.builtin.apt:
-        name: "*"
-        state: latest
-    - name: Upgrade packages
-      ansible.builtin.apt:
+      apt:
+        update_cache: yes
         upgrade: yes
