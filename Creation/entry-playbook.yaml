@@ -11,6 +11,9 @@
     - name: Install Tailscale
       ansible.builtin.command:
         cmd: "{{ tailscale_command }}"
+    - name: Tailscale Up
+      ansible.builtin.command:
+        cmd: "tailscale up"
     - name: Sent discord message
       community.general.discord:
         webhook_id: "{{ discord_webhook_id }}"
