@@ -1,0 +1,6 @@
+- name: Regular Restarts for Server Assets
+  hosts: all
+  tasks:
+    - name: Reboot a slow machine that may have lots of updates to apply
+      ansible.builtin.reboot:
+	      reboot_timeout: 3600
